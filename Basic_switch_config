@@ -1,0 +1,26 @@
+enable secret 5 $1$pJJg$ivHLUPw04Dx3Vgp.0K7Un.
+!
+username gaurav secret 5 $1$mG9A$nqxM23cZ//bB/RFMLbMQF.
+line vty 0 4
+ password cisco
+ login local
+ transport input all
+interface Vlan1
+ ip address 192.168.1.6 255.255.255.0
+ no shut
+
+------------------------------------------------------------------------------------------------------
+
+config t
+username gaurav secret 5 $1$mG9A$nqxM23cZ//bB/RFMLbMQF.
+
+line vty 0 4
+ login local
+ transport input all
+
+ip domain-name ccnapython.com
+crypto key generate rsa
+1024
+
+end
+wr
