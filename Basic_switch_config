@@ -13,7 +13,7 @@ interface Vlan1
 
 config t
 username gaurav secret 5 $1$mG9A$nqxM23cZ//bB/RFMLbMQF.
-
+username gaurav privilege 15
 line vty 0 4
  login local
  transport input all
